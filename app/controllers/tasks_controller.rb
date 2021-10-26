@@ -34,12 +34,13 @@ class TasksController < ApplicationController
     @task.destroy
 
     # no need for app/views/tasks/destroy.html.erb
-    redirect_to tasks_path
+    redirect_to tasks_path # redirect to index
   end
 
   private
 
   def set_task
+    # fetch task from DB
     @task = Task.find(params[:id])
   end
 
